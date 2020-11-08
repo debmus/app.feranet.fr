@@ -14,7 +14,7 @@
       >
       <v-spacer></v-spacer>
 
-      <v-tooltip left>
+<!--       <v-tooltip left>
         <template v-slot:activator="{ on, attrs }">
           <a
             class="hidden-sm-and-down"
@@ -28,7 +28,7 @@
           </a>
         </template>
         <span>GitHub</span>
-      </v-tooltip>
+      </v-tooltip> -->
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" color="white" app>
