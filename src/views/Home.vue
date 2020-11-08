@@ -25,6 +25,11 @@
           </v-list-item-group>
         </v-list>
       </v-card>
+
+      <v-alert class="my-6" outlined type="error" border="left">
+        Le symbole ☹ signifie que l'application n'est pas fonctionnelle pour
+        le moment
+      </v-alert>
     </v-container>
   </div>
 </template>
@@ -47,7 +52,7 @@ export default {
         color: "green",
         route: "/password",
       },
-      { text: "Recherche DNS", icon: "dns", color: "blue-grey", route: "/dns" },
+      { text: "Recherche DNS ☹", icon: "dns", color: "blue-grey", route: "/dns" },
       { text: "Hashage", icon: "code", color: "indigo", route: "/hash" },
     ],
   }),

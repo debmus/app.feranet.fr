@@ -78,7 +78,7 @@ export default {
         color: "green",
         route: "/password",
       },
-      { text: "Recherche DNS", icon: "dns", color: "blue-grey", route: "/dns" },
+      { text: "Recherche DNS ☹", icon: "dns", color: "blue-grey", route: "/dns" },
       { text: "Hashage", icon: "code", color: "indigo", route: "/hash" },
     ],
   }),
