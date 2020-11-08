@@ -1,7 +1,7 @@
 <template>
-  <div class="dns">
+  <div class="ocr">
     <h1>
-      <v-icon color="pink" large class="mr-6"> dns </v-icon> Recherche DNS
+      <v-icon color="deep-purple" large class="mr-6"> dns </v-icon> Reconnaissance optique de caractères
     </h1>
 
     <v-container class="my-6">

@@ -27,8 +27,8 @@
       </v-card>
 
       <v-alert class="my-6" outlined type="error" border="left">
-        Le symbole ☹ signifie que l'application n'est pas fonctionnelle pour
-        le moment
+        Le symbole ☹ signifie que l'application n'est pas fonctionnelle pour le
+        moment
       </v-alert>
     </v-container>
   </div>
@@ -52,8 +52,31 @@ export default {
         color: "green",
         route: "/password",
       },
-      { text: "Recherche DNS ☹", icon: "dns", color: "blue-grey", route: "/dns" },
-      { text: "Hashage", icon: "code", color: "indigo", route: "/hash" },
+      { text: "Hashage", icon: "code", color: "blue", route: "/hash" },
+      {
+        text: "Recherche DNS ☹",
+        icon: "dns",
+        color: "pink",
+        route: "/dns",
+      },
+      {
+        text: "Vérification email ☹",
+        icon: "mark_email_read",
+        color: "teal",
+        route: "/email",
+      },
+      {
+        text: "Reconnaissance caractères ☹",
+        icon: "image_search",
+        color: "deep-purple",
+        route: "/ocr",
+      },
+      {
+        text: "Information WHOIS ☹",
+        icon: "domain",
+        color: "brown",
+        route: "/whois",
+      },
     ],
   }),
 };

@@ -1,7 +1,7 @@
 <template>
-  <div class="dns">
+  <div class="whois">
     <h1>
-      <v-icon color="pink" large class="mr-6"> dns </v-icon> Recherche DNS
+      <v-icon color="brown" large class="mr-6"> dns </v-icon> Information WHOIS
     </h1>
 
     <v-container class="my-6">

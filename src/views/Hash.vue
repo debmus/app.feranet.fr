@@ -1,7 +1,7 @@
 <template>
   <div class="hash">
     <h1>
-      <v-icon color="indigo" large class="mr-6"> code </v-icon> Hashage (md5 |
+      <v-icon color="blue" large class="mr-6"> code </v-icon> Hashage (md5 |
       sha1 | sha256 | sha512)
     </h1>
 

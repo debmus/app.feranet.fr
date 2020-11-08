@@ -14,7 +14,7 @@
       >
       <v-spacer></v-spacer>
 
-<!--       <v-tooltip left>
+      <!--       <v-tooltip left>
         <template v-slot:activator="{ on, attrs }">
           <a
             class="hidden-sm-and-down"
@@ -78,8 +78,31 @@ export default {
         color: "green",
         route: "/password",
       },
-      { text: "Recherche DNS ☹", icon: "dns", color: "blue-grey", route: "/dns" },
-      { text: "Hashage", icon: "code", color: "indigo", route: "/hash" },
+      { text: "Hashage", icon: "code", color: "blue", route: "/hash" },
+      {
+        text: "Recherche DNS ☹",
+        icon: "dns",
+        color: "pink",
+        route: "/dns",
+      },
+      {
+        text: "Vérification email ☹",
+        icon: "mark_email_read",
+        color: "teal",
+        route: "/email",
+      },
+      {
+        text: "Reconnaissance caractères ☹",
+        icon: "image_search",
+        color: "deep-purple",
+        route: "/ocr",
+      },
+      {
+        text: "Information WHOIS ☹",
+        icon: "domain",
+        color: "brown",
+        route: "/whois",
+      },
     ],
   }),
 };
