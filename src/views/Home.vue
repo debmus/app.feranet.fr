@@ -66,7 +66,7 @@ export default {
         route: "/email",
       },
       {
-        text: "Reconnaissance caractères ☹",
+        text: "Reconnaissance de caractères ☹",
         icon: "image_search",
         color: "deep-purple",
         route: "/ocr",
