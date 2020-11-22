@@ -7,7 +7,6 @@
 
     <v-container class="my-6">
       <v-card class="mx-auto">
-
         <v-card-title>{{ generatedPassword }}</v-card-title>
 
         <v-tooltip bottom>
@@ -67,7 +66,7 @@
 // https://codepen.io/webnoobcodes/pen/eqLpJP
 export default {
   data: () => ({
-    passwordLength: 12,
+    passwordLength: 20,
     refreshPassword: false,
     optiondata: [
       {

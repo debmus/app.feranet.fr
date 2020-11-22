@@ -96,7 +96,7 @@ export default {
   mounted() {
     axios
       .get(
-        "https://ip-geolocation.whoisxmlapi.com/api/v1?apiKey=at_V9k8oFMeDgs5jBuBpu3WiqBLLgyDZ"
+        "00https://ip-geolocation.whoisxmlapi.com/api/v1?apiKey=at_V9k8oFMeDgs5jBuBpu3WiqBLLgyDZ"
       )
       .then((response) => (this.info_ip = response.data))
       .catch((error) => {
