@@ -1,0 +1,19 @@
+version: "3"
+services:
+  server:
+    image: app-feranet
+    container_name: server-appferanet
+    networks:
+      - backend
+      - bridge
+    ports:
+      - "3000:3000"
+
+  client:
+    image: httpd:latest
+    container_name: client-appferanet
+    ports:
+      - "8585:80"
+    restart: always
+    volumes:
+      - ./data:/usr/local/apache2/htdocs/

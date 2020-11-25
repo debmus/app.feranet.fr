@@ -23,7 +23,7 @@
 
         <v-card v-else class="mx-auto">
           <v-card-title
-            >{{ info_ip.ip }}
+            >{{ info_ip }}
             <v-tooltip right>
               <template v-slot:activator="{ on, attrs }">
                 <v-btn
@@ -43,7 +43,7 @@
           </v-card-title>
 
           <v-divider class="mx-4"></v-divider>
-          <v-card-title>
+<!--           <v-card-title>
             <img
               v-bind:src="
                 'https://lipis.github.io/flag-icon-css/flags/4x3/' +
@@ -58,7 +58,7 @@
 
           <v-card-text>
             {{ info_ip.isp }}
-          </v-card-text>
+          </v-card-text> -->
         </v-card>
       </section>
     </v-container>
@@ -83,20 +83,20 @@ export default {
     return {
       loading: true,
       errored: false,
-      ip_info: null,
+      info_ip: null,
     };
   },
   methods: {
     doCopy: function () {
-      this.$copyText(this.info_ip.ip).then(function (e) {
-        console.log(e);
+      this.$copyText(this.info_ip).then(function () {
+        //console.log(e);
       });
     },
   },
   mounted() {
     axios
       .get(
-        "00https://ip-geolocation.whoisxmlapi.com/api/v1?apiKey=at_V9k8oFMeDgs5jBuBpu3WiqBLLgyDZ"
+        "http://localhost:3000/ip"
       )
       .then((response) => (this.info_ip = response.data))
       .catch((error) => {
@@ -105,5 +105,16 @@ export default {
       })
       .finally(() => (this.loading = false));
   },
+  /*     axios
+      .get(
+        "https://ip-geolocation.whoisxmlapi.com/api/v1?apiKey=at_V9k8oFMeDgs5jBuBpu3WiqBLLgyDZ"
+      )
+      .then((response) => (this.info_ip = response.data))
+      .catch((error) => {
+        console.log(error);
+        this.errored = true;
+      })
+      .finally(() => (this.loading = false));
+  }, */
 };
 </script>

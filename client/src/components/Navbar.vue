@@ -52,7 +52,7 @@ export default {
         route: "/password",
       },
       { text: "Hashage", icon: "code", color: "blue", route: "/hash" },
-      {
+      /* {
         text: "Recherche DNS ☹",
         icon: "dns",
         color: "pink",
@@ -75,7 +75,7 @@ export default {
         icon: "domain",
         color: "brown",
         route: "/whois",
-      },
+      }, */
     ],
   }),
 };

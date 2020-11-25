@@ -4,41 +4,26 @@
       <v-icon color="pink" large class="mr-6"> dns </v-icon> Recherche DNS
     </h1>
 
-    <v-container class="my-6">
-      <v-card class="pa-2">
-        <!--         <v-form ref="form" v-model="valid" @submit="validate">
-          <v-text-field
-            v-model="name"
-            :counter="200"
-            :rules="nameRules"
-            label="Texte"
-            required
-          ></v-text-field>
+    <v-form>
+      <v-container>
+        <v-row>
+          <v-col cols="12" md="4">
+            <v-text-field
+              v-model="msgBody"
+              label="Message"
+              required
+            ></v-text-field>
+            <v-btn @click="submit">Submit</v-btn>
+          </v-col>
+        </v-row>
 
-          <v-btn
-            :disabled="!valid"
-            color="success"
-            class="mr-4"
-            type="submit"
-            value="Submit"
-          >
-            Executer
-          </v-btn>
-
-          <v-btn color="error" class="mr-4" @click="reset"> Supprimer </v-btn>
-        </v-form> -->
-        {{ messages }}
-        <v-simple-table class="my-12">
-          <template v-slot:default>
-            <!--             <tbody>
-              <tr v-for="formResp in formResps" :key="formResp">
-                <td>{{ formResp.dnsRecords }}</td>
-              </tr>
-            </tbody> -->
-          </template>
-        </v-simple-table>
-      </v-card>
-    </v-container>
+        <v-list-item v-for="message in messages" :key="message">
+          <v-list-item-content>
+            <v-list-item-title v-text="message"></v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-container>
+    </v-form>
   </div>
 </template>
 <script>
@@ -47,18 +32,22 @@ import axios from "axios";
 export default {
   data() {
     return {
-      loading: true,
-      messages: '',
+      messages: [],
+      msgBody: "",
     };
   },
-  async created() {
-    this.messages = (await axios.get("http://localhost:3000/messages")).data;
-    //.then((response) => (this.formResps = response.data))
-    //.catch((error) => {
-    //console.log(error);
-    //this.errored = true;
-    //})
-    //.finally(() => (this.loading = false));
+  created() {
+    axios
+      .get("http://localhost:3000/messages")
+      .then((response) => (this.messages = response.data));
+  },
+  methods: {
+    submit() {
+      axios
+        .post("http://localhost:3000/messages")
+        .then((response) => (this.messages = response.data));
+      console.log(this.msgBody);
+    },
   },
 };
 </script>
