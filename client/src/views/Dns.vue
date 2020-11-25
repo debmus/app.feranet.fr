@@ -6,7 +6,7 @@
 
     <v-container class="my-6">
       <v-card class="pa-2">
-<!--         <v-form ref="form" v-model="valid" @submit="validate">
+        <!--         <v-form ref="form" v-model="valid" @submit="validate">
           <v-text-field
             v-model="name"
             :counter="200"
@@ -27,14 +27,14 @@
 
           <v-btn color="error" class="mr-4" @click="reset"> Supprimer </v-btn>
         </v-form> -->
-
+        {{ messages }}
         <v-simple-table class="my-12">
           <template v-slot:default>
-            <tbody>
+            <!--             <tbody>
               <tr v-for="formResp in formResps" :key="formResp">
                 <td>{{ formResp.dnsRecords }}</td>
               </tr>
-            </tbody>
+            </tbody> -->
           </template>
         </v-simple-table>
       </v-card>
@@ -48,20 +48,17 @@ export default {
   data() {
     return {
       loading: true,
-      formResps: [],
+      messages: '',
     };
   },
-  mounted() {
-    axios
-      .get(
-        "https://www.whoisxmlapi.com/whoisserver/DNSService?apiKey=at_V9k8oFMeDgs5jBuBpu3WiqBLLgyDZ&type=A,MX,NS&outputFormat=json&domainName=bensimon.fr"
-      )
-      .then((response) => (this.formResps = response.data))
-      .catch((error) => {
-        console.log(error);
-        //this.errored = true;
-      })
-      .finally(() => (this.loading = false));
+  async created() {
+    this.messages = (await axios.get("http://localhost:3000/messages")).data;
+    //.then((response) => (this.formResps = response.data))
+    //.catch((error) => {
+    //console.log(error);
+    //this.errored = true;
+    //})
+    //.finally(() => (this.loading = false));
   },
 };
 </script>
