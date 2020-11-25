@@ -1,7 +1,7 @@
 version: "3"
 services:
   server:
-    image: app-feranet
+    image: feranet/app-feranet
     container_name: server-appferanet
     networks:
       - backend
