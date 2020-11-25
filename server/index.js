@@ -1,31 +1,30 @@
+const http = require('http');
 const express = require('express');
+const path = require('path');
+
 const cors = require('cors');
 const bodyParser = require('body-parser');
+
 const app = express();
-const port = 3000;
+app.use(express.json());
+app.use(express.static("express"));
 //const execSync = require('child_process').execSync;
 
 app.use(cors());
 app.use(bodyParser.json());
 
-//var messages = ["Casablanca", "Rabat", "Fes"];
 //const stdout = execSync('ls -l1');
 //var messages = stdout = execSync('curl -s https://4.icanhazip.com/');
-//var messages2 = stdout = execSync('curl -s https://6.icanhazip.com/');
 
 app.get('/ip', (req, res) => {
-    //res.send(req.ip);
     const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
     res.json(ip);
 });
 
-/*  app.post('/messages', (req, res) => {
-    let msg = req.body
-    console.log(msg);
-    messages.push(msg.message);
-    res.json(msg);
-    console.log(messages);
-    //console.log(`stdout: ${stdout}`);
-})  */
+app.use('/', function (req, res) {
+    res.sendFile(path.join(__dirname + '/index.html'));
+});
 
-app.listen(port, () => console.log('http://localhost:3000'));
+const server = http.createServer(app);
+const port = 3000;
+server.listen(port); console.debug('Server listening on : http://localhost:' + port);
