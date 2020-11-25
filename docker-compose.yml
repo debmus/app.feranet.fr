@@ -3,17 +3,23 @@ services:
   server:
     image: feranet/app-feranet
     container_name: server-appferanet
+    restart: always
+    ports:
+      - "8686:3000"
     networks:
       - backend
-      - bridge
-    ports:
-      - "3000:3000"
 
   client:
     image: httpd:latest
+    depends_on:
+      - server
     container_name: client-appferanet
+    restart: always
     ports:
       - "8585:80"
-    restart: always
     volumes:
       - ./data:/usr/local/apache2/htdocs/
+
+networks:
+  backend:
+    driver: bridge

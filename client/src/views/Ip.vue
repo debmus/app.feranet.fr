@@ -96,7 +96,7 @@ export default {
   mounted() {
     axios
       .get(
-        "http://localhost:3000/ip"
+        "https://api.feranet.fr/ip"
       )
       .then((response) => (this.info_ip = response.data))
       .catch((error) => {
