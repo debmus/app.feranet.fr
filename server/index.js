@@ -6,13 +6,13 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const app = express();
+
 app.use(express.json());
 app.use(express.static("express"));
-//const execSync = require('child_process').execSync;
-
 app.use(cors());
 app.use(bodyParser.json());
 
+//const execSync = require('child_process').execSync;
 //const stdout = execSync('ls -l1');
 //var messages = stdout = execSync('curl -s https://4.icanhazip.com/');
 
