@@ -93,9 +93,7 @@ export default {
   }),
   methods: {
     doCopy: function () {
-      this.$copyText(this.generatedPassword).then(function (e) {
-        console.log(e);
-      });
+      this.$copyText(this.generatedPassword).then(function () {});
     },
   },
   computed: {
