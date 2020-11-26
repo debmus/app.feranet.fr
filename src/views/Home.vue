@@ -1,10 +1,9 @@
 <template>
   <div class="home">
     <v-container class="my-6">
-      <v-card max-width="400">
-        Work In Progress !
-      </v-card>
-
+      <section>
+        <v-alert type="warning" border="left"> Work In Progress ! </v-alert>
+      </section>
     </v-container>
   </div>
 </template>
