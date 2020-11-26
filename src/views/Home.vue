@@ -2,7 +2,7 @@
   <div class="home">
     <v-container class="my-6">
       <v-card max-width="400">
-        hello
+        Work In Progress !
       </v-card>
 
     </v-container>

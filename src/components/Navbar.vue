@@ -5,8 +5,10 @@
       <v-toolbar-title>
         <v-img class="float-left mr-2" max-width="32" src="../assets/logo.svg">
         </v-img
-        >tools.feranet.fr</v-toolbar-title
-      >
+        >tools.feranet.fr
+        <v-chip color="red" label outlined class="mx-2">BETA</v-chip>
+        <v-chip color="orange" label outlined>WIP</v-chip>
+      </v-toolbar-title>
       <v-spacer></v-spacer>
     </v-app-bar>
 
