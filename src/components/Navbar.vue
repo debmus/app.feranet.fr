@@ -5,7 +5,7 @@
       <v-toolbar-title>
         <v-img class="float-left mr-2" max-width="32" src="../assets/logo.svg">
         </v-img
-        >app.feranet.fr</v-toolbar-title
+        >tools.feranet.fr</v-toolbar-title
       >
       <v-spacer></v-spacer>
     </v-app-bar>
