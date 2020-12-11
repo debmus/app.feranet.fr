@@ -98,7 +98,7 @@ export default {
       .get(
         "https://api.feranet.fr/ip"
       )
-      .then((response) => (this.info_ip = response.data))
+      .then((response) => (this.info_ip = response.data.ip))
       .catch((error) => {
         console.log(error);
         this.errored = true;
