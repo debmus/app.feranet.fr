@@ -22,8 +22,19 @@
         </div>
 
         <v-card v-else class="mx-auto">
-          <v-card-title
-            >{{ info_ip }}
+          <v-card-title>
+            <img
+              v-bind:src="
+                //'https://lipis.github.io/flag-icon-css/flags/4x3/' +
+                'https://tools.feranet.fr/flags/' +
+                //'http://192.168.20.66:8080/flags/' +
+                info_ip.geo.country.toLowerCase() +
+                '.svg'
+              "
+              width="28"
+              class="mr-2"
+            />
+            {{ info_ip.ip }}
             <v-tooltip right>
               <template v-slot:activator="{ on, attrs }">
                 <v-btn
@@ -41,24 +52,6 @@
               <span>Copier</span>
             </v-tooltip>
           </v-card-title>
-
-          <v-divider class="mx-4"></v-divider>
-<!--           <v-card-title>
-            <img
-              v-bind:src="
-                'https://lipis.github.io/flag-icon-css/flags/4x3/' +
-                info_ip.location.country.toLowerCase() +
-                '.svg'
-              "
-              width="36"
-              class="mr-2"
-            />
-            ({{ info_ip.location.country }}) - {{ info_ip.location.region }}
-          </v-card-title>
-
-          <v-card-text>
-            {{ info_ip.isp }}
-          </v-card-text> -->
         </v-card>
       </section>
     </v-container>
@@ -88,33 +81,19 @@ export default {
   },
   methods: {
     doCopy: function () {
-      this.$copyText(this.info_ip).then(function () {
-        //console.log(e);
-      });
+      this.$copyText(this.info_ip.ip).then(function () {
+       });
     },
   },
   mounted() {
     axios
-      .get(
-        "https://api.feranet.fr/ip"
-      )
-      .then((response) => (this.info_ip = response.data.ip))
-      .catch((error) => {
-        console.log(error);
-        this.errored = true;
-      })
-      .finally(() => (this.loading = false));
-  },
-  /*     axios
-      .get(
-        "https://ip-geolocation.whoisxmlapi.com/api/v1?apiKey=at_V9k8oFMeDgs5jBuBpu3WiqBLLgyDZ"
-      )
+      .get("https://api.feranet.fr/ip")
       .then((response) => (this.info_ip = response.data))
       .catch((error) => {
         console.log(error);
         this.errored = true;
       })
       .finally(() => (this.loading = false));
-  }, */
+  },
 };
 </script>
