@@ -5,11 +5,11 @@ import Home from '../views/Home'
 import Hash from '../views/Hash'
 import Speedtest from '../views/Speedtest'
 import Password from '../views/Password'
-import Dns from '../views/Dns'
+/* import Dns from '../views/Dns' */
 import Ip from '../views/Ip'
 import Whois from '../views/Whois'
-import Email from '../views/Email'
-import Ocr from '../views/Ocr'
+/* import Email from '../views/Email'
+import Ocr from '../views/Ocr' */
 
 Vue.use(VueRouter)
 
@@ -33,11 +33,11 @@ const routes = [{
         name: 'password',
         component: Password
     },
-    {
+/*     {
         path: '/Dns',
         name: 'dns',
         component: Dns
-    },
+    }, */
     {
         path: '/Hash',
         name: 'hash',
@@ -48,7 +48,7 @@ const routes = [{
         name: 'whois',
         component: Whois
     },
-    {
+/*     {
         path: '/Email',
         name: 'email',
         component: Email
@@ -57,7 +57,7 @@ const routes = [{
         path: '/Ocr',
         name: 'ocr',
         component: Ocr
-    },
+    }, */
 ]
 
 const router = new VueRouter({

@@ -1,17 +1,16 @@
 <template>
   <div class="whois">
-    <h1>
-      <v-icon color="brown" large class="mr-6"> domain </v-icon> Information WHOIS
-    </h1>
-
-    <v-container class="my-6">
-      <v-card class="pa-2">
+    <v-container>
+      <h1>
+        <v-icon large class="mr-6" color="blue">domain</v-icon>Information WHOIS
+      </h1>
+      <v-card class="pa-6 my-6">
         <v-form ref="form" v-model="valid" @submit="validate">
           <v-text-field
             v-model="name"
             :counter="100"
             :rules="nameRules"
-            label="Domaine ou IP"
+            label="Domaine ou adresse IP"
             required
           ></v-text-field>
 
@@ -27,12 +26,16 @@
 
           <v-btn color="error" class="mr-4" @click="reset"> Supprimer </v-btn>
         </v-form>
+      </v-card>
 
-        <div class="my-6">
-          <template>
-            <pre>{{ formResps }}</pre>
-          </template>
-        </div>
+      <section v-if="errored">
+        <v-alert type="info" border="left">
+          L'adresse IP ou le domaine n'est pas valide
+        </v-alert>
+      </section>
+
+      <v-card class="pa-6 my-6" v-if="formResps">
+        <pre>{{ formResps }}</pre>
       </v-card>
     </v-container>
   </div>
@@ -48,6 +51,7 @@ export default {
     valid: true,
     name: "",
     formResps: "",
+    errored: false,
     nameRules: [
       (v) => !!v || "Texte requis",
       (v) =>
@@ -70,21 +74,19 @@ export default {
           !ipRegex({ exact: true }).test(this.name) &&
           !isValidDomain(this.name)
         ) {
-          this.formResps = "Adresse IP ou domaine non valide";
+          this.errored = true;
         } else {
           axios
             .get("https://api.feranet.fr/whois/" + this.name)
-            .then((response) => (this.formResps = response.data))
-            .catch((error) => {
-              console.log(error);
-              this.errored = true;
-            });
+            .then((response) => (this.formResps = response.data));
+          this.errored = false;
         }
       }
     },
     reset() {
       this.$refs.form.reset();
       this.formResps = "";
+      this.errored = false;
     },
   },
 };
