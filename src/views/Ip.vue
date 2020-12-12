@@ -25,11 +25,8 @@
           <v-card-title>
             <img
               v-bind:src="
-                //'https://lipis.github.io/flag-icon-css/flags/4x3/' +
                 'https://api.feranet.fr/flags/' +
-                //'http://192.168.20.66:8080/flags/' +
-                info_ip.geo.country.toLowerCase() +
-                '.svg'
+                info_ip.geo.country.toLowerCase()
               "
               width="28"
               class="mr-2"
@@ -81,8 +78,7 @@ export default {
   },
   methods: {
     doCopy: function () {
-      this.$copyText(this.info_ip.ip).then(function () {
-       });
+      this.$copyText(this.info_ip.ip).then(function () {});
     },
   },
   mounted() {
