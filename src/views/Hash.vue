@@ -29,7 +29,7 @@
           <v-btn color="error" class="mr-4" @click="reset"> Supprimer </v-btn>
         </v-form>
 
-        <v-simple-table class="my-12">
+        <v-simple-table class="my-9">
           <template v-slot:default>
             <tbody>
               <tr v-for="formResp in formResps" :key="formResp">

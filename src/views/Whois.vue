@@ -1,7 +1,7 @@
 <template>
   <div class="whois">
     <h1>
-      <v-icon color="brown" large class="mr-6"> dns </v-icon> Information WHOIS
+      <v-icon color="brown" large class="mr-6"> domain </v-icon> Information WHOIS
     </h1>
 
     <v-container class="my-6">
@@ -28,11 +28,11 @@
           <v-btn color="error" class="mr-4" @click="reset"> Supprimer </v-btn>
         </v-form>
 
-        <v-simple-table class="my-12">
-          <template v-slot:default>
+        <div class="my-6">
+          <template>
             <pre>{{ formResps }}</pre>
           </template>
-        </v-simple-table>
+        </div>
       </v-card>
     </v-container>
   </div>
@@ -66,9 +66,11 @@ export default {
       if (this.name === "") {
         return;
       } else {
-        if (!ipRegex().test(this.name) || !isValidDomain(this.name)) {
-          this.formResps = "Adresse Ip ou domaine non valide";
-          console.log("Adresse Ip non valide");
+        if (
+          !ipRegex({ exact: true }).test(this.name) &&
+          !isValidDomain(this.name)
+        ) {
+          this.formResps = "Adresse IP ou domaine non valide";
         } else {
           axios
             .get("https://api.feranet.fr/whois/" + this.name)
