@@ -26,7 +26,7 @@
             <img
               v-bind:src="
                 //'https://lipis.github.io/flag-icon-css/flags/4x3/' +
-                'https://tools.feranet.fr/flags/' +
+                'https://api.feranet.fr/flags/' +
                 //'http://192.168.20.66:8080/flags/' +
                 info_ip.geo.country.toLowerCase() +
                 '.svg'
