@@ -71,13 +71,13 @@ export default {
         icon: "image_search",
         color: "deep-purple",
         route: "/ocr",
-      },
+      },*/
       {
-        text: "Information WHOIS ☹",
+        text: "Information WHOIS",
         icon: "domain",
         color: "brown",
         route: "/whois",
-      }, */
+      },
     ],
   }),
 };
