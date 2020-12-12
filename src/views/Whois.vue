@@ -41,6 +41,8 @@
 <script>
 import axios from "axios";
 import ipRegex from "ip-regex";
+import isValidDomain from "is-valid-domain";
+
 export default {
   data: () => ({
     valid: true,
@@ -64,8 +66,8 @@ export default {
       if (this.name === "") {
         return;
       } else {
-        if (! ipRegex().test(this.name)) {
-          this.formResps = "Adresse Ip non valide";
+        if (!ipRegex().test(this.name) || !isValidDomain(this.name)) {
+          this.formResps = "Adresse Ip ou domaine non valide";
           console.log("Adresse Ip non valide");
         } else {
           axios
