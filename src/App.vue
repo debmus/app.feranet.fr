@@ -6,7 +6,7 @@
       <router-view></router-view>
     </v-main>
 
-<Footer />
+    <Footer />
   </v-app>
 </template>
 
@@ -18,7 +18,7 @@ export default {
   name: "App",
   components: {
     Navbar,
-    Footer
+    Footer,
   },
   data: () => ({
     //

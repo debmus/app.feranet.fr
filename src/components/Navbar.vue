@@ -2,7 +2,7 @@
   <div>
     <v-app-bar color="primary" app dark>
       <button class="goToHome">
-        <v-toolbar-title @click="$router.replace('home')">
+        <v-toolbar-title @click="$router.replace('/')">
           <v-img
             class="float-left mr-2"
             max-width="32"
