@@ -6,7 +6,7 @@
           cols="12"
           sm="6"
           md="4"
-          lg="2"
+          lg="3"
           v-for="(item, i) in items"
           :key="i"
         >
@@ -14,14 +14,14 @@
             <template v-slot:default="{ hover }">
               <v-card
                 class="mx-auto"
-                width="300"
+                width="400"
                 min-height="300"
                 router
                 :to="item.route"
               >
                 <!-- <div :color="item.color" flat align="center"> -->
                 <div align="center" v-bind:style="{ background: item.color }">
-                  <v-icon v-text="item.icon" size="150px" dark></v-icon>
+                  <v-icon v-text="item.icon" size="100px" dark></v-icon>
                 </div>
 
                 <v-card-text>

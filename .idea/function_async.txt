@@ -1,0 +1,12 @@
+var f = async function (ip, port){
+
+    var t = await isopen(req.params.ip, req.params.port, function (response) {
+        console.log(response);
+        res.json(response);
+    });
+
+}
+
+app.get('/scan/:ip/:port', (req, res) => {
+   f(ip,port)
+});
