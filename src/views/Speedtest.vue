@@ -1,28 +1,34 @@
 <template>
   <div class="speedtest">
-    <h1>
-      <v-icon large class="mr-6" color="orange">network_check</v-icon>Test de
-      débit
-    </h1>
+    <v-container fluid>
+      <v-row>
+        <v-col cols="12">
+          <v-card class="pa-6">
+            <h2>
+              <v-icon large class="mr-6" color="primary">network_check</v-icon
+              >Test de débit
+            </h2>
 
-    <v-container class="my-6">
-      <div v-if="!iframe.loaded">
-        <v-progress-linear
-          color="#2d88ed"
-          indeterminate
-          rounded
-          height="6"
-        ></v-progress-linear>
-      </div>
+            <div v-if="!iframe.loaded">
+              <v-progress-linear
+                color="#2d88ed"
+                indeterminate
+                rounded
+                height="6"
+              ></v-progress-linear>
+            </div>
 
-      <iframe
-        :src="iframe.src"
-        ref="frame"
-        @load="load"
-        width="100%"
-        height="650px"
-        frameborder="0"
-      ></iframe>
+            <iframe
+              :src="iframe.src"
+              ref="frame"
+              @load="load"
+              width="100%"
+              height="650px"
+              frameborder="0"
+            ></iframe>
+          </v-card>
+        </v-col>
+      </v-row>
     </v-container>
   </div>
   <!-- v-show="iframe.loaded" -->

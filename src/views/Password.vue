@@ -1,62 +1,76 @@
 <template>
   <div class="password">
-    <h1>
-      <v-icon color="green" large class="mr-6"> vpn_key </v-icon> Générateur de
-      mot de passe
-    </h1>
+    <v-container fluid>
+      <v-row>
+        <v-col cols="12" lg="8">
+          <v-card class="pa-6">
+            <h2>
+              <v-icon color="primary" large class="mr-6"> vpn_key </v-icon>
+              Générateur de mot de passe
+            </h2>
 
-    <v-container class="my-6">
-      <v-card class="mx-auto">
-        <v-card-title>{{ generatedPassword }}</v-card-title>
+            <!-- v-tooltip bottom>
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn
+                  type="button"
+                  @click="doCopy"
+                  depressed
+                  class="ml-2 hidden-sm-and-down"
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  <v-icon> content_copy </v-icon>Copier
+                </v-btn>
+              </template>
+              <span>Copier</span>
+            </v-tooltip> -->
 
-        <v-tooltip bottom>
-          <template v-slot:activator="{ on, attrs }">
+            <v-card-title>{{ generatedPassword }}</v-card-title>
+
+            <br />
+
+            <v-slider
+              min="1"
+              max="100"
+              v-model="passwordLength"
+              class="slider"
+              thumb-label="always"
+            ></v-slider>
+
+            <!-- <v-card-sub-title>{{ passwordLength }} / 100</v-card-sub-title> -->
+
             <v-btn
-              type="button"
-              @click="doCopy"
-              depressed
-              icon
-              class="ml-2 hidden-sm-and-down float-left"
-              v-bind="attrs"
-              v-on="on"
+              class="my-3 ml-2 success"
+              @click="refreshPassword = !refreshPassword"
             >
-              <v-icon> content_copy </v-icon>
+              Générer
             </v-btn>
-          </template>
-          <span>Copier</span>
-        </v-tooltip>
 
-        <v-slider
-          min="1"
-          max="100"
-          v-model="passwordLength"
-          class="slider"
-        ></v-slider>
-        <v-card-actions>
-          <v-list flat>
-            <v-list-item-title class="title text-center">
-              {{ passwordLength }} / 100
-              <v-btn
-                class="my-3 success"
-                block
-                @click="refreshPassword = !refreshPassword"
-              >
-                Générer
-              </v-btn>
-            </v-list-item-title>
+            <v-btn class="my-3 ml-2 hidden-sm-and-down" @click="doCopy"
+              ><v-icon> content_copy </v-icon>
+              Copier
+            </v-btn>
+          </v-card>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col cols="12" md="4" lg="4">
+          <v-card class="pa-6">
+            <!-- <v-card-actions> -->
+            <v-list flat>
+              <v-list-item-title class="title text-center">
+                Liste des options
+              </v-list-item-title>
 
-            <v-list-item v-for="(option, index) in optiondata" :key="index">
-              <v-list-item-icon>
+              <v-list-item v-for="(option, index) in optiondata" :key="index">
                 <v-checkbox v-model="option.status"></v-checkbox>
-              </v-list-item-icon>
-
-              <v-list-item-content>
                 <v-list-item-title>{{ option.name }}</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-          </v-list>
-        </v-card-actions>
-      </v-card>
+              </v-list-item>
+            </v-list>
+            <!-- </v-card-actions> -->
+          </v-card>
+        </v-col>
+      </v-row>
     </v-container>
   </div>
 </template>

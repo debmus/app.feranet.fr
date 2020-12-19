@@ -1,42 +1,50 @@
 <template>
   <div class="whois">
-    <v-container>
-      <h1>
-        <v-icon large class="mr-6" color="blue">domain</v-icon>Information WHOIS
-      </h1>
-      <v-card class="pa-6 my-6">
-        <v-form ref="form" v-model="valid" @submit="validate">
-          <v-text-field
-            v-model="name"
-            :counter="100"
-            :rules="nameRules"
-            label="Domaine ou adresse IP"
-            required
-          ></v-text-field>
+    <v-container fluid>
+      <v-row >
+        <v-col cols="12" lg="6">
+          <v-card class="pa-6">
+            <h2>
+              <v-icon large class="mr-6" color="primary">domain</v-icon
+              >Information WHOIS
+            </h2>
 
-          <v-btn
-            :disabled="!valid"
-            color="success"
-            class="mr-4"
-            type="submit"
-            value="Submit"
-          >
-            Executer
-          </v-btn>
+            <v-form ref="form" v-model="valid" @submit="validate">
+              <v-text-field
+                v-model="name"
+                :counter="100"
+                :rules="nameRules"
+                label="Domaine ou adresse IP"
+                required
+              ></v-text-field>
 
-          <v-btn color="error" class="mr-4" @click="reset"> Supprimer </v-btn>
-        </v-form>
-      </v-card>
+              <v-btn
+                :disabled="!valid"
+                color="success"
+                class="mr-4"
+                type="submit"
+                value="Submit"
+              >
+                Executer
+              </v-btn>
 
-      <section v-if="errored">
-        <v-alert type="info" border="left">
-          L'adresse IP ou le domaine n'est pas valide
-        </v-alert>
-      </section>
+              <v-btn color="error" class="mr-4" @click="reset">
+                Supprimer
+              </v-btn>
+            </v-form>
 
-      <v-card class="pa-6 my-6" v-if="formResps">
-        <pre>{{ formResps }}</pre>
-      </v-card>
+            <section class="my-6" v-if="errored">
+              <v-alert type="info" border="left">
+                L'adresse IP ou le domaine n'est pas valide
+              </v-alert>
+            </section>
+
+            <section class="my-6" v-if="formResps">
+              <pre>{{ formResps }}</pre>
+            </section>
+          </v-card>
+        </v-col>
+      </v-row>
     </v-container>
   </div>
 </template>

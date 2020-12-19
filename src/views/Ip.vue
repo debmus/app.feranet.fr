@@ -1,56 +1,53 @@
 <template>
   <div class="ip">
-    <h1>
-      <v-icon large class="mr-6" color="red">public</v-icon>Votre Adresse IP
-    </h1>
-    <v-container class="my-6">
-      <section v-if="errored">
-        <v-alert type="error" border="left">
-          Nous sommes désolés, nous ne sommes pas en mesure de récupérer ces
-          informations pour le moment, veuillez essayer de revenir plus tard
-        </v-alert>
-      </section>
+    <v-container fluid>
+      <v-row>
+        <v-col cols="12" md="6" lg="4">
+          <v-card class="pa-6">
+            <h2>
+              <v-icon large class="mr-6" color="primary">public</v-icon>Votre
+              Adresse IP
+            </h2>
 
-      <section v-else>
-        <div v-if="loading">
-          <v-progress-linear
-            color="#2d88ed"
-            indeterminate
-            rounded
-            height="6"
-          ></v-progress-linear>
-        </div>
+            <section v-if="errored">
+              <v-alert type="error" border="left">
+                Nous sommes désolés, nous ne sommes pas en mesure de récupérer
+                ces informations pour le moment, veuillez essayer de revenir
+                plus tard
+              </v-alert>
+            </section>
 
-        <v-card v-else class="mx-auto">
-          <v-card-title>
-            <img
-              v-bind:src="
-                'https://api.feranet.fr/flags/' +
-                info_ip.geo.country.toLowerCase()
-              "
-              width="28"
-              class="mr-2"
-            />
-            {{ info_ip.ip }}
-            <v-tooltip right>
-              <template v-slot:activator="{ on, attrs }">
-                <v-btn
-                  type="button"
-                  @click="doCopy"
-                  depressed
-                  icon
-                  class="ml-2 hidden-sm-and-down"
-                  v-bind="attrs"
-                  v-on="on"
-                >
-                  <v-icon> content_copy </v-icon></v-btn
-                >
-              </template>
-              <span>Copier</span>
-            </v-tooltip>
-          </v-card-title>
-        </v-card>
-      </section>
+            <section v-else>
+              <div v-if="loading">
+                <v-progress-linear
+                  color="#2d88ed"
+                  indeterminate
+                  rounded
+                  height="6"
+                ></v-progress-linear>
+              </div>
+
+              <section class="my-6 pa-6" v-else>
+                <v-card-title>
+                  <img
+                    v-bind:src="
+                      'https://api.feranet.fr/flags/' +
+                      info_ip.geo.country.toLowerCase()
+                    "
+                    width="28"
+                    class="mr-2"
+                  />
+                  {{ info_ip.ip }}
+                </v-card-title>
+                <v-btn class="mx-3 mt-6 hidden-sm-and-down" @click="doCopy"
+                  ><v-icon> content_copy </v-icon>
+                  Copier
+                </v-btn>
+              </section>
+            </section>
+          </v-card>
+        </v-col>
+      </v-row>
     </v-container>
   </div>
 </template>
@@ -64,11 +61,11 @@ export default {
       default: { isDark: false },
     },
   },
-  filters: {
+  /*   filters: {
     currencydecimal(value) {
       return value.toFixed(2);
     },
-  },
+  }, */
   data() {
     return {
       loading: true,

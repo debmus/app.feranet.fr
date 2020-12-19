@@ -14,50 +14,54 @@ import Ocr from '../views/Ocr' */
 Vue.use(VueRouter)
 
 const routes = [{
-        path: '/',
-        name: 'home',
-        component: Home
-    },
-    {
-        path: '/Speedtest',
-        name: 'speedtest',
-        component: Speedtest
-    },
-    {
-        path: '/Ip',
-        name: 'ip',
-        component: Ip
-    },
-    {
-        path: '/Password',
-        name: 'password',
-        component: Password
-    },
+    path: '/',
+    redirect: '/home'
+},
+{
+    path: '/home',
+    name: 'home',
+    component: Home
+},
+{
+    path: '/Speedtest',
+    name: 'speedtest',
+    component: Speedtest
+},
+{
+    path: '/Ip',
+    name: 'ip',
+    component: Ip
+},
+{
+    path: '/Password',
+    name: 'password',
+    component: Password
+},
 /*     {
         path: '/Dns',
         name: 'dns',
         component: Dns
     }, */
-    {
-        path: '/Hash',
-        name: 'hash',
-        component: Hash
-    },
-    {
-        path: '/Whois',
-        name: 'whois',
-        component: Whois
-    },
-/*     {
-        path: '/Email',
-        name: 'email',
-        component: Email
-    },
-    {
-        path: '/Ocr',
-        name: 'ocr',
-        component: Ocr
-    }, */
+{
+    path: '/Hash',
+    name: 'hash',
+    component: Hash
+},
+{
+    path: '/Whois',
+    name: 'whois',
+    component: Whois
+},
+    /*     {
+            path: '/Email',
+            name: 'email',
+            component: Email
+        },
+        {
+            path: '/Ocr',
+            name: 'ocr',
+            component: Ocr
+        }, */
 ]
 
 const router = new VueRouter({
