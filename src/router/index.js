@@ -5,6 +5,7 @@ import Home from '../views/Home'
 import Hash from '../views/Hash'
 import Speedtest from '../views/Speedtest'
 import Password from '../views/Password'
+import Scanport from '../views/Scanport'
 /* import Dns from '../views/Dns' */
 import Ip from '../views/Ip'
 import Whois from '../views/Whois'
@@ -51,6 +52,11 @@ const routes = [{
     path: '/Whois',
     name: 'whois',
     component: Whois
+},
+{
+    path: '/Scanport',
+    name: 'scanport',
+    component: Scanport
 },
     /*     {
             path: '/Email',
