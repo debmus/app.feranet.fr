@@ -10,7 +10,7 @@
           <v-img
             class="float-left mr-2"
             max-width="32"
-            src="../assets/logo_white.svg"
+            src="../assets/logo.svg"
           >
           </v-img
           >tools.feranet.fr
