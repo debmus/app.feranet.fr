@@ -89,13 +89,13 @@ export default {
     formResps: "",
     errored: false,
     nameRulesNAME: [
-      (v) => !!v || "Champ requi",
+      (v) => !!v || "Champ requis",
       (v) =>
         (v && v.length <= 100) ||
         "Le texte doit comporter moins de 100 caractères",
     ],
     nameRulesPORT: [
-      (v) => !!v || "Champ requi",
+      (v) => !!v || "Champ requis",
       (v) => (v && v >= 1 && v <= 65535) || "Doit être compris en : 1 et 65535",
     ],
   }),

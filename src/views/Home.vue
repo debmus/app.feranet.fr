@@ -54,11 +54,13 @@
           </v-card>
         </v-col>
 
-        <v-col cols="12" md="6" lg="6" class="hidden-md-and-up">
+        <!--         <v-col cols="12" md="6" lg="6" class="hidden-md-and-up">
           <v-card>
             <Navigation />
           </v-card>
-        </v-col>
+        </v-col> -->
+
+
       </v-row>
     </v-container>
   </div>
@@ -66,15 +68,15 @@
 
 
 <script>
-import Navigation from "../components/Navigation";
+//import Navigation from "../components/Navigation";
 
 export default {
-  components: {
+/*   components: {
     Navigation,
   },
   data: () => ({
-    //
-  }),
+    sheet: false,
+  }), */
   methods: {
     goToGitSite: function () {
       location.href = "https://github.com/debmus/tools.feranet.fr";

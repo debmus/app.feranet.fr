@@ -17,7 +17,7 @@
         </v-toolbar-title>
       </button>
     </v-app-bar>
-    <v-navigation-drawer width="350" v-model="drawer" color="white" app>
+    <v-navigation-drawer class="hidden-sm-and-down" width="350" v-model="drawer" hide-overlay color="white" app>
       <Navigation />
     </v-navigation-drawer>
   </div>
@@ -31,9 +31,7 @@ export default {
     Navigation,
   },
   data: () => ({
-    sticky: false,
     drawer: true,
-    overlay: false,
   }),
   methods: {
     dohome: function () {
