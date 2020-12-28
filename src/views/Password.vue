@@ -1,8 +1,8 @@
 <template>
   <div class="password">
     <v-container fluid>
-      <v-row>
-        <v-col cols="12" lg="8">
+<!--       <v-row>
+        <v-col cols="12" lg="8"> -->
           <v-card class="pa-6">
             <h2>
               <v-icon color="primary" large class="mr-6"> vpn_key </v-icon>
@@ -51,10 +51,10 @@
               Copier
             </v-btn>
           </v-card>
-        </v-col>
-      </v-row>
+<!--         </v-col>
+      </v-row> -->
       <v-row>
-        <v-col cols="12" md="4" lg="4">
+        <v-col cols="12" md="6" lg="6">
           <v-card class="pa-6">
             <!-- <v-card-actions> -->
             <v-list flat>

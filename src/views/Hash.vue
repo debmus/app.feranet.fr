@@ -1,48 +1,46 @@
 <template>
   <div class="hash">
     <v-container fluid>
-      <v-row>
-        <v-col cols="12" lg="6">
-          <v-card class="pa-6">
-            <h2>
-              <v-icon color="primary" large class="mr-6"> code </v-icon> Hashage
-              (md5 | sha1 | sha256)
-            </h2>
+      <!--       <v-row>
+        <v-col cols="12" lg="6"> -->
+      <v-card class="pa-6">
+        <h2>
+          <v-icon color="primary" large class="mr-6"> code </v-icon> Hashage
+          (md5 | sha1 | sha256)
+        </h2>
 
-            <v-form ref="form" v-model="valid" @submit="validate">
-              <v-text-field
-                v-model="name"
-                :counter="200"
-                :rules="nameRules"
-                label="Texte"
-                required
-              ></v-text-field>
+        <v-form ref="form" v-model="valid" @submit="validate">
+          <v-text-field
+            v-model="name"
+            :counter="200"
+            :rules="nameRules"
+            label="Texte"
+            required
+          ></v-text-field>
 
-              <v-btn
-                :disabled="!valid"
-                color="success"
-                class="mr-4"
-                type="submit"
-                value="Submit"
-              >
-                Executer
-              </v-btn>
+          <v-btn
+            :disabled="!valid"
+            color="success"
+            class="mr-4"
+            type="submit"
+            value="Submit"
+          >
+            Executer
+          </v-btn>
 
-              <v-btn color="error" class="mr-4" @click="reset">
-                Supprimer
-              </v-btn>
-            </v-form>
+          <v-btn color="error" class="mr-4" @click="reset"> Supprimer </v-btn>
+        </v-form>
 
-            <section class="my-6" v-if="show">
-              <v-list-item v-for="formResp in formResps" :key="formResp">
-                <v-list-item-content>
-                  <v-list-item-title>{{ formResp }}</v-list-item-title>
-                </v-list-item-content>
-              </v-list-item>
-            </section>
-          </v-card>
-        </v-col>
-      </v-row>
+        <section class="my-6" v-if="show">
+          <v-list-item v-for="formResp in formResps" :key="formResp">
+            <v-list-item-content>
+              <v-list-item-title>{{ formResp }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </section>
+      </v-card>
+      <!--         </v-col>
+      </v-row> -->
     </v-container>
   </div>
 </template>

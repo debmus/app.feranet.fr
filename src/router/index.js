@@ -6,11 +6,8 @@ import Hash from '../views/Hash'
 import Speedtest from '../views/Speedtest'
 import Password from '../views/Password'
 import Scanport from '../views/Scanport'
-/* import Dns from '../views/Dns' */
 import Ip from '../views/Ip'
 import Whois from '../views/Whois'
-/* import Email from '../views/Email'
-import Ocr from '../views/Ocr' */
 
 Vue.use(VueRouter)
 
@@ -38,11 +35,6 @@ const routes = [{
     name: 'password',
     component: Password
 },
-/*     {
-        path: '/Dns',
-        name: 'dns',
-        component: Dns
-    }, */
 {
     path: '/Hash',
     name: 'hash',
@@ -58,16 +50,6 @@ const routes = [{
     name: 'scanport',
     component: Scanport
 },
-    /*     {
-            path: '/Email',
-            name: 'email',
-            component: Email
-        },
-        {
-            path: '/Ocr',
-            name: 'ocr',
-            component: Ocr
-        }, */
 ]
 
 const router = new VueRouter({

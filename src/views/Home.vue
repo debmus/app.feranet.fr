@@ -59,8 +59,6 @@
             <Navigation />
           </v-card>
         </v-col> -->
-
-
       </v-row>
     </v-container>
   </div>
@@ -68,15 +66,7 @@
 
 
 <script>
-//import Navigation from "../components/Navigation";
-
 export default {
-/*   components: {
-    Navigation,
-  },
-  data: () => ({
-    sheet: false,
-  }), */
   methods: {
     goToGitSite: function () {
       location.href = "https://github.com/debmus/tools.feranet.fr";
