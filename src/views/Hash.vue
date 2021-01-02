@@ -1,8 +1,6 @@
 <template>
   <div class="hash">
     <v-container fluid>
-      <!--       <v-row>
-        <v-col cols="12" lg="6"> -->
       <v-card class="pa-6">
         <h2>
           <v-icon color="primary" large class="mr-6"> code </v-icon> Hashage
@@ -32,15 +30,16 @@
         </v-form>
 
         <section class="my-6" v-if="show">
-          <v-list-item v-for="formResp in formResps" :key="formResp">
-            <v-list-item-content>
-              <v-list-item-title>{{ formResp }}</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
+          <v-card-title> md5 </v-card-title>
+          <v-card-text>{{ formRespsMD5 }}</v-card-text>
+          <v-divider></v-divider>
+          <v-card-title> sha1 </v-card-title>
+          <v-card-text>{{ formRespsSHA1 }}</v-card-text>
+          <v-divider></v-divider>
+          <v-card-title> sha256 </v-card-title>
+          <v-card-text>{{ formRespsSHA256 }}</v-card-text>
         </section>
       </v-card>
-      <!--         </v-col>
-      </v-row> -->
     </v-container>
   </div>
 </template>
@@ -54,7 +53,9 @@ export default {
   data: () => ({
     valid: true,
     name: "",
-    formResps: [],
+    formRespsMD5: "",
+    formRespsSHA1: "",
+    formRespsSHA256: "",
     show: false,
     nameRules: [
       (v) => !!v || "Texte requis",
@@ -69,21 +70,24 @@ export default {
       this.$refs.form.validate();
       e.preventDefault();
 
-      this.formResps = [];
-
       if (this.name === "") {
         return;
       } else {
-        this.formResps.push("[md5] → " + md5(this.name));
-        this.formResps.push("[sha1] → " + sha1(this.name));
-        this.formResps.push("[sha256] → " + sha256(this.name));
+        this.formRespsMD5 = md5(this.name);
+        this.formRespsSHA1 = sha1(this.name);
+        this.formRespsSHA256 = sha256(this.name);
         this.show = true;
       }
     },
     reset() {
       this.$refs.form.reset();
-      this.formResps.splice(this.formResp);
+      //this.formResps.splice(this.formResp);
       this.show = false;
+
+      this.formRespsMD5 = "";
+      this.formRespsSHA1 = "";
+      this.formRespsSHA256 = "";
+
     },
   },
 };
