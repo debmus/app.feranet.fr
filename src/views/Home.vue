@@ -6,7 +6,7 @@
           <v-card elevation="2">
             <v-img
               height="250"
-              src="https://cloud.feranet.fr/apps/files_sharing/publicpreview/z4TPcGsLy2famYB?fileId=224&file=/Flat%20Design_Exemple/ecran_screen.png&x=1920&y=1080&a=true"
+              src="../assets/home.png"
             ></v-img>
 
             <v-card-title>Bienvenue sur tools.feranet</v-card-title>
