@@ -3,6 +3,4 @@
   - Reconnaissance optique de caractères (deep-purple)
 
 * Fix :
-  - 'Scan de port' -> Le port 22 est fermé = Le port 22 sur SITE/IP est fermé
   - Test de débit sans speedtest externe
-  - 'hash' structure
