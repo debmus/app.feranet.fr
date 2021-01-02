@@ -53,12 +53,12 @@
           <v-card-title>
             <div v-if="formResps.isOpen">
               <v-icon large color="green">check_circle</v-icon>
-              Le port {{ formResps.port }} est ouvert
+              Le port {{ formResps.port }} sur {{ name }} est ouvert
             </div>
 
             <div v-else>
               <v-icon large color="red">cancel</v-icon>
-              Le port {{ formResps.port }} est fermé
+              Le port {{ formResps.port }} sur {{ name }} est fermé
             </div>
           </v-card-title>
           <v-card-subtitle v-if="formResps.label !== 'unknow'">
