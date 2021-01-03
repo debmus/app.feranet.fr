@@ -16,6 +16,7 @@
                 :rules="nameRulesPORT"
                 label="Port"
                 required
+                @click="clear"
               ></v-text-field>
             </v-col>
 
@@ -26,6 +27,7 @@
                 :rules="nameRulesNAME"
                 label="Domaine ou adresse IP"
                 required
+                @click="clear"
               ></v-text-field>
             </v-col>
           </v-row>
@@ -125,6 +127,9 @@ export default {
       this.$refs.form.reset();
       this.formResps = "";
       this.errored = false;
+    },
+    clear() {
+      this.formResps = "";
     },
   },
 };

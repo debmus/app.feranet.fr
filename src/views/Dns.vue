@@ -25,6 +25,7 @@
                 :rules="nameRulesNAME"
                 label="Domaine"
                 required
+                @click="clear"
               ></v-text-field>
             </v-col>
           </v-row>
