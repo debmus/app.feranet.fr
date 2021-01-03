@@ -8,6 +8,7 @@ import Password from '../views/Password'
 import Scanport from '../views/Scanport'
 import Ip from '../views/Ip'
 import Whois from '../views/Whois'
+import Dns from '../views/Dns'
 
 Vue.use(VueRouter)
 
@@ -49,6 +50,11 @@ const routes = [{
     path: '/Scanport',
     name: 'scanport',
     component: Scanport
+},
+{
+    path: '/Dns',
+    name: 'dns',
+    component: Dns
 },
 ]
 

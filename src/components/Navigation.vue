@@ -47,12 +47,14 @@ export default {
         color: "pink",
         route: "/scanport",
       },
-      /* {
-        text: "Recherche DNS ☹",
+      {
+        text: "Information DNS",
+        info: "Effectuer des recherches DNS (NS,MX,A, ...)",
         icon: "dns",
-        color: "pink",
+        color: "indigo",
         route: "/dns",
       },
+      /*
       {
         text: "Vérification email ☹",
         icon: "mark_email_read",

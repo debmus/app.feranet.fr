@@ -4,10 +4,7 @@
       <v-row>
         <v-col cols="12" md="6" lg="6">
           <v-card elevation="2">
-            <v-img
-              height="250"
-              src="../assets/home.png"
-            ></v-img>
+            <v-img height="250" src="../assets/home.png"></v-img>
 
             <v-card-title>Bienvenue sur tools.feranet</v-card-title>
             <v-card-subtitle
@@ -53,8 +50,7 @@
             </v-btn>
           </v-card>
         </v-col>
-
-        <!--         <v-col cols="12" md="6" lg="6" class="hidden-md-and-up">
+        <!--         <v-col cols="12" md="6" lg="6" class="hidden-md-and-up" >
           <v-card>
             <Navigation />
           </v-card>
