@@ -10,21 +10,21 @@
 
         <v-form ref="form" v-model="valid" @submit="validate">
           <v-row>
+            <v-col cols="12" md="3">
+              <v-text-field
+                v-model="port"
+                :rules="nameRulesPORT"
+                label="Port"
+                required
+              ></v-text-field>
+            </v-col>
+
             <v-col cols="12" md="9">
               <v-text-field
                 v-model="name"
                 :counter="100"
                 :rules="nameRulesNAME"
                 label="Domaine ou adresse IP"
-                required
-              ></v-text-field>
-            </v-col>
-
-            <v-col cols="12" md="3">
-              <v-text-field
-                v-model="port"
-                :rules="nameRulesPORT"
-                label="Port"
                 required
               ></v-text-field>
             </v-col>

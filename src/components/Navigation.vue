@@ -51,7 +51,7 @@ export default {
         text: "Information DNS",
         info: "Effectuer des recherches DNS (NS,MX,A, ...)",
         icon: "dns",
-        color: "indigo",
+        color: "deep-purple",
         route: "/dns",
       },
       /*
@@ -79,7 +79,7 @@ export default {
         text: "Hashage (md5 | sha1 | sha256) ",
         info: "Générez un hash (md5 | sha1 | sha256) à partir d'une entrée.",
         icon: "code",
-        color: "blue",
+        color: "cyan",
         route: "/hash",
       },
     ],
