@@ -3,3 +3,4 @@
 
 * Fix :
   - Test de débit sans speedtest externe
+  - Redirect /
