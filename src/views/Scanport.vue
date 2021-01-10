@@ -94,7 +94,7 @@ export default {
     ],
     nameRulesPORT: [
       (v) => !!v || "Champ requis",
-      (v) => (v && v >= 1 && v <= 65535) || "Doit être compris en : 1 et 65535",
+      (v) => (v && v >= 1 && v <= 65536) || "Doit être compris en : 1 et 65535",
     ],
   }),
 
